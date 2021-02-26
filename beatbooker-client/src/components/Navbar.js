@@ -4,32 +4,32 @@ const Navbar = ({ user, handleLogout }) => {
   return (
     <header>
       <h3>BeatBooker - The Crowd is Waiting</h3>
-      <ul>
+      <h4>
         {!user.id ? (
           <>
-            <li>
+            <p>
               <NavLink to="/login">Login</NavLink>
-            </li>
-            <li>
+            </p>
+            <p>
               <NavLink to="/signup">Sign up</NavLink>
-            </li>
+            </p>
           </>
         ) : (
           <>
-            <li>
+            <p>
               <NavLink to="/" exact>
                 Home
               </NavLink>
-            </li>
-            <li>
+            </p>
+            <p>
               <NavLink to="/users">Users</NavLink>
-            </li>
-            <li>
+            </p>
+            <p>
               <button onClick={handleLogout}>Logout</button>
-            </li>
+            </p>
           </>
         )}
-      </ul>
+      </h4>
     </header>
   );
 };

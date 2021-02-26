@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar.js";
 import { Switch, withRouter, Redirect } from "react-router-dom";
 import Login from "./components/Login";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./components/Home";
 const API = "http://localhost:3000/";
 class App extends Component {
   state = {
@@ -65,7 +66,10 @@ class App extends Component {
       body: JSON.stringify({ user: userInfo }),
     })
       .then((resp) => resp.json())
-      .then((data) => this.handleAuthResponse(data))
+      .then((data) => {
+        this.handleAuthResponse(data);
+        this.props.history.push("/home");
+      })
       .catch(console.log);
   };
   handleSignup = (e, userInfo) => {
@@ -109,6 +113,10 @@ class App extends Component {
           )}
         />
         {!user.id && <Redirect to="/login" />}
+        <Route
+          path="/home"
+          render={(routerProps) => <Home {...routerProps} />}
+        />
       </div>
     );
   }
