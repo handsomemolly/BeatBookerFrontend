@@ -62,7 +62,7 @@ class App extends Component {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(userInfo),
+      body: JSON.stringify({ user: userInfo }),
     })
       .then((resp) => resp.json())
       .then((data) => this.handleAuthResponse(data))
@@ -70,7 +70,7 @@ class App extends Component {
   };
   handleSignup = (e, userInfo) => {
     e.preventDefault();
-    fetch(API + "/sign_up", {
+    fetch(API + "sign_up.json", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
