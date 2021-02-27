@@ -18,15 +18,18 @@ class Home extends Component {
   generateArtists = () => {
     return this.state.artists.map((artist) => {
       return (
-        <div className="card">
-          <div className="cardContainer">
-            <ul>
-              <h2>{artist.name}</h2>
-              <p>Type: {artist.artist_type}</p>
-              <p>Price per Event: ${artist.price}</p>
-            </ul>
-          </div>
-        </div>
+        <article className="card">
+          <h1>{artist.name}</h1>
+          <p>
+            <b>Type:</b> {artist.artist_type}
+          </p>
+          <p>
+            <b>Genre:</b> {artist.genre}
+          </p>
+          <p>
+            <b>Price per Event:</b> ${artist.price}
+          </p>
+        </article>
       );
     });
   };
@@ -35,7 +38,9 @@ class Home extends Component {
     return (
       <div>
         <h1 className="title">Book Your Next Beat</h1>
-        {this.generateArtists()}
+        <div className="centered">
+          <section className="cards">{this.generateArtists()}</section>
+        </div>
       </div>
     );
   }

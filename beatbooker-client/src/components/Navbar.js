@@ -2,8 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 const Navbar = ({ user, handleLogout }) => {
   return (
-    <header>
-      <h3>BeatBooker - The Crowd is Waiting</h3>
+    <header className="topNav">
+      <h3 className="navTitle">BeatBooker</h3>
       <h4>
         {!user.id ? (
           <>
