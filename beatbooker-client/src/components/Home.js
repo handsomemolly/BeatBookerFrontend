@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../App.css";
 import Artist from "./Artist";
+import Booking from "./Booking";
 import { useHistory } from "react-router-dom";
 
 class Home extends Component {
@@ -58,6 +59,7 @@ class Home extends Component {
           <section className="cards">{this.generateArtists()}</section>
         </div>
         <div>{<Artist artists={this.state.artists} />}</div>
+        <div>{<Booking bookings={this.state.bookings} />}</div>
       </div>
     );
   }
