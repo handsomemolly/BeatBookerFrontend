@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import "../App.css";
+import Artist from "./Artist";
+import { useHistory } from "react-router-dom";
 
 class Home extends Component {
   state = {
     artists: [],
+    bookings: [],
+    selected: {},
   };
 
   componentDidMount() {
@@ -15,10 +19,15 @@ class Home extends Component {
       });
   }
 
+  findArtist = () => {
+    console.log(this.state.artists[0]);
+    // <Redirect to="/artist" />;
+  };
+
   generateArtists = () => {
     return this.state.artists.map((artist) => {
       return (
-        <article className="card">
+        <article onClick={this.findArtist} className="card">
           <h1>{artist.name}</h1>
           <p>
             <b>Type:</b> {artist.artist_type}
@@ -34,6 +43,13 @@ class Home extends Component {
     });
   };
 
+  // Home() {
+  //   let history = useHistory();
+  //   const redirect = () => {
+  //     history.push("/artist");
+  //   };
+  // }
+
   render() {
     return (
       <div>
@@ -41,6 +57,7 @@ class Home extends Component {
         <div className="centered">
           <section className="cards">{this.generateArtists()}</section>
         </div>
+        <div>{<Artist artists={this.state.artists} />}</div>
       </div>
     );
   }
