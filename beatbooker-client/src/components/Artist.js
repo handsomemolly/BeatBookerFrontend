@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import "../App.css";
 
 class Artist extends Component {
-  render() {
-      return()
-  }
+  state = {
+    artists: [],
+    bookings: [],
+  };
 }
 
 export default Artist;

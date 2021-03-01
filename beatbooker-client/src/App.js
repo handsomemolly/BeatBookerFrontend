@@ -6,7 +6,7 @@ import { Switch, withRouter, Redirect } from "react-router-dom";
 import Login from "./components/Login";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./components/Home";
-// import Artist from "./components/Artst";
+import Artist from "./components/Artist";
 const API = "http://localhost:3000/";
 class App extends Component {
   state = {
@@ -118,6 +118,10 @@ class App extends Component {
           path="/home"
           render={(routerProps) => <Home {...routerProps} />}
         />
+        {/* <Route
+          path="/home"
+          render={(routerProps) => <Artist {...routerProps} />}
+        /> */}
       </div>
     );
   }
