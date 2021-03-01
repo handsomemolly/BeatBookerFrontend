@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react";
 import React, { Component } from "react";
+import ReactPlayer from "react-player";
 import "../App.css";
 
 class Artist extends Component {
@@ -22,7 +23,7 @@ class Artist extends Component {
           <article className="artist-page">
             <h1>{this.props.selected.name}</h1>
             <p>Bio: {this.props.selected.bio}</p>
-            <p>{this.props.selected.video_url}</p>
+            <ReactPlayer url={this.props.selected.video_url} />
           </article>
         </section>
       </div>
