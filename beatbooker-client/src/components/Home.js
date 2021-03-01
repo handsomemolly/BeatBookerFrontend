@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import "../App.css";
 import Artist from "./Artist";
 import Booking from "./Booking";
-import { useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 class Home extends Component {
   state = {
     artists: [],
     bookings: [],
     selected: {},
+    redirect: null,
   };
 
   componentDidMount() {
@@ -20,15 +21,19 @@ class Home extends Component {
       });
   }
 
-  findArtist = () => {
-    console.log(this.state.artists[0]);
-    // <Redirect to="/artist" />;
+  generateOneArtist = () => {
+    fetch(`http://localhost:3000/artists/29`)
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({ selected: data });
+        console.log(this.state.selected);
+      });
   };
 
   generateArtists = () => {
     return this.state.artists.map((artist) => {
       return (
-        <article onClick={this.findArtist} className="card">
+        <article onClick={this.generateOneArtist} className="card">
           <h1>{artist.name}</h1>
           <p>
             <b>Type:</b> {artist.artist_type}
@@ -52,13 +57,16 @@ class Home extends Component {
   // }
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to={this.state.redirect} />;
+    }
     return (
       <div>
         <h1 className="title">Book Your Next Beat</h1>
         <div className="centered">
           <section className="cards">{this.generateArtists()}</section>
         </div>
-        <div>{<Artist artists={this.state.artists} />}</div>
+        <div>{<Artist selected={this.state.selected} />}</div>
         <div>{<Booking bookings={this.state.bookings} />}</div>
       </div>
     );
