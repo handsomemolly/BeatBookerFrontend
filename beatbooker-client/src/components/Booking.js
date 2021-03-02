@@ -89,9 +89,9 @@ class Booking extends Component {
           />
           <input type="submit" />
         </form>
-        <div>
+        {/* <div>
           <MyBookings />
-        </div>
+        </div> */}
       </div>
     );
   }
