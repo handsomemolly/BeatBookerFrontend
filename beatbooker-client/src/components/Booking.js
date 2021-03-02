@@ -34,13 +34,28 @@ class Booking extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     let formData = {
-      eventDate: this.state.eventDate,
-      eventType: this.state.eventType,
-      numberOfAttendees: this.state.numberOfAttendees,
+      event_date: this.state.eventDate,
+      event_type: this.state.eventType,
+      number_of_attendees: this.state.numberOfAttendees,
+      user_id: 10,
+      artist_id: 29,
     };
-    let bookingArray = this.state.submittedBookings.concat(formData);
-    this.setState({ submittedBookings: bookingArray });
+    fetch(`http://localhost:3000/bookings`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ booking: formData }),
+    })
+      .then((res) => res.json())
+      .then((book) => {
+        console.log(book);
+      });
   };
+
+  //     let bookingArray = this.state.submittedBookings.concat(formData);
+  //     this.setState({ submittedBookings: bookingArray });
+  //   };
 
   render() {
     return (

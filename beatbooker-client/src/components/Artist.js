@@ -2,8 +2,12 @@ import { render } from "@testing-library/react";
 import React, { Component } from "react";
 import ReactPlayer from "react-player";
 import "../App.css";
+import Booking from "./Booking";
 
 class Artist extends Component {
+  state = {
+    bookings: [],
+  };
   //   generateArtistInfo = () => {
   //     return this.props.selected.map((artist) => {
   //       return (
@@ -27,6 +31,7 @@ class Artist extends Component {
             <button onClick={this.props.handleBack}>Back to All Artists</button>
           </article>
         </section>
+        <div>{<Booking bookings={this.state.bookings} />}</div>
       </div>
     );
   }

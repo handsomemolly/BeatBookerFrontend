@@ -7,11 +7,9 @@ import { Redirect } from "react-router-dom";
 class Home extends Component {
   state = {
     artists: [],
-    bookings: [],
+    // bookings: [],
     selected: {},
     display: true,
-    // id: 29,
-    // redirect: null,
   };
 
   componentDidMount() {
@@ -59,12 +57,26 @@ class Home extends Component {
     this.setState({ selected: {}, display: true });
   };
 
-  // Home() {
-  //   let history = useHistory();
-  //   const redirect = () => {
-  //     history.push("/artist");
+  //   createBooking = () => {
+  //     let newBooking = {
+  //       event_date: "",
+  //       event_type: "",
+  //       number_of_attendees: 0,
+  //       user_id: this.props.user.id,
+  //       artist_id: 29,
+  //     };
+  //     fetch(`http://localhost:3000/bookings`, {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(newBooking),
+  //     })
+  //       .then((res) => res.json())
+  //       .then((book) => {
+  //         console.log(book);
+  //       });
   //   };
-  // }
 
   render() {
     return (
@@ -83,7 +95,7 @@ class Home extends Component {
             />
           ) : null}
         </div>
-        <div>{<Booking bookings={this.state.bookings} />}</div>
+        {/* <div>{<Booking bookings={this.state.bookings} />}</div> */}
       </div>
     );
   }
