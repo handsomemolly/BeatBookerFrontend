@@ -38,7 +38,7 @@ class Booking extends Component {
       event_type: this.state.eventType,
       number_of_attendees: this.state.numberOfAttendees,
       user_id: 10,
-      artist_id: 29,
+      artist_id: this.props.selected.id,
     };
     fetch(`http://localhost:3000/bookings`, {
       method: "POST",

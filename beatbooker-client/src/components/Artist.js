@@ -31,7 +31,14 @@ class Artist extends Component {
             <button onClick={this.props.handleBack}>Back to All Artists</button>
           </article>
         </section>
-        <div>{<Booking bookings={this.state.bookings} />}</div>
+        <div>
+          {
+            <Booking
+              bookings={this.state.bookings}
+              selected={this.props.selected}
+            />
+          }
+        </div>
       </div>
     );
   }

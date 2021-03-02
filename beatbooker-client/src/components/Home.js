@@ -95,7 +95,7 @@ class Home extends Component {
             />
           ) : null}
         </div>
-        {/* <div>{<Booking bookings={this.state.bookings} />}</div> */}
+        {/* <div>{<Booking selected={this.state.selected} />}</div> */}
       </div>
     );
   }
