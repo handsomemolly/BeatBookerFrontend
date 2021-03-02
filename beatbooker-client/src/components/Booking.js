@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../App.css";
 import Home from "./Home";
 import Artist from "./Artist";
+import MyBookings from "./MyBookings";
 
 class Booking extends Component {
   state = {
@@ -51,6 +52,7 @@ class Booking extends Component {
       .then((book) => {
         console.log(book);
       });
+    window.alert("Booking Requested!");
   };
 
   //     let bookingArray = this.state.submittedBookings.concat(formData);
@@ -87,6 +89,9 @@ class Booking extends Component {
           />
           <input type="submit" />
         </form>
+        <div>
+          <MyBookings />
+        </div>
       </div>
     );
   }
