@@ -118,10 +118,7 @@ class App extends Component {
           path="/home"
           render={(routerProps) => <Home {...routerProps} />}
         />
-        {/* <Route
-          path="/home"
-          render={(routerProps) => <Artist {...routerProps} />}
-        /> */}
+        <Route path="/artist" component={Artist} />
       </div>
     );
   }

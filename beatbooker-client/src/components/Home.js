@@ -9,7 +9,9 @@ class Home extends Component {
     artists: [],
     bookings: [],
     selected: {},
-    redirect: null,
+    display: true,
+    // id: 29,
+    // redirect: null,
   };
 
   componentDidMount() {
@@ -21,32 +23,40 @@ class Home extends Component {
       });
   }
 
-  generateOneArtist = () => {
-    fetch(`http://localhost:3000/artists/29`)
+  generateOneArtist = (e) => {
+    let artistId = e.target.closest("div").id;
+    fetch(`http://localhost:3000/artists/${artistId}`)
       .then((res) => res.json())
       .then((data) => {
-        this.setState({ selected: data });
+        this.setState({ selected: data, display: false });
         console.log(this.state.selected);
       });
+    // this.props.history.push("/artist");
   };
 
   generateArtists = () => {
     return this.state.artists.map((artist) => {
       return (
-        <article onClick={this.generateOneArtist} className="card">
-          <h1>{artist.name}</h1>
-          <p>
-            <b>Type:</b> {artist.artist_type}
-          </p>
-          <p>
-            <b>Genre:</b> {artist.genre}
-          </p>
-          <p>
-            <b>Price per Event:</b> ${artist.price}
-          </p>
-        </article>
+        <div id={artist.id} onClick={(e) => this.generateOneArtist(e)}>
+          <article className="card">
+            <h1>{artist.name}</h1>
+            <p>
+              <b>Type:</b> {artist.artist_type}
+            </p>
+            <p>
+              <b>Genre:</b> {artist.genre}
+            </p>
+            <p>
+              <b>Price per Event:</b> ${artist.price}
+            </p>
+          </article>
+        </div>
       );
     });
+  };
+
+  handleBack = () => {
+    this.setState({ selected: {}, display: true });
   };
 
   // Home() {
@@ -57,16 +67,22 @@ class Home extends Component {
   // }
 
   render() {
-    if (this.state.redirect) {
-      return <Redirect to={this.state.redirect} />;
-    }
     return (
       <div>
         <h1 className="title">Book Your Next Beat</h1>
         <div className="centered">
-          <section className="cards">{this.generateArtists()}</section>
+          <section className="cards">
+            {this.state.display ? this.generateArtists() : null}
+          </section>
         </div>
-        <div>{<Artist selected={this.state.selected} />}</div>
+        <div>
+          {!this.state.display ? (
+            <Artist
+              selected={this.state.selected}
+              handleBack={this.handleBack}
+            />
+          ) : null}
+        </div>
         <div>{<Booking bookings={this.state.bookings} />}</div>
       </div>
     );

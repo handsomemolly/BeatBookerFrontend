@@ -24,6 +24,7 @@ class Artist extends Component {
             <h1>{this.props.selected.name}</h1>
             <p>Bio: {this.props.selected.bio}</p>
             <ReactPlayer url={this.props.selected.video_url} />
+            <button onClick={this.props.handleBack}>Back to All Artists</button>
           </article>
         </section>
       </div>
