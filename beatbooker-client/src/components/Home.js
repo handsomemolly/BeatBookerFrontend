@@ -92,6 +92,7 @@ class Home extends Component {
             <Artist
               selected={this.state.selected}
               handleBack={this.handleBack}
+              artists={this.state.artists}
             />
           ) : null}
         </div>

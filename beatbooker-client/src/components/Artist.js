@@ -36,6 +36,7 @@ class Artist extends Component {
             <Booking
               bookings={this.state.bookings}
               selected={this.props.selected}
+              artists={this.props.artists}
             />
           }
         </div>
