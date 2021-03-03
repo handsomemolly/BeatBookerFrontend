@@ -42,8 +42,12 @@ class App extends Component {
       });
   };
   handleAuthResponse = (data) => {
-    if (data.username) {
-      const { username, id, token } = data;
+    // debugger;
+    if (data.user.username) {
+      // const { username, id, token } = data;
+      const username = data.user.username;
+      const id = data.user.id;
+      const token = data.jwt;
       this.setState({
         user: {
           username,
@@ -70,10 +74,10 @@ class App extends Component {
       body: JSON.stringify({ user: userInfo }),
     })
       .then((resp) => resp.json())
-      .then((data) => {
-        this.handleAuthResponse(data);
-        this.props.history.push("/home");
-      })
+      .then(
+        (data) => this.handleAuthResponse(data)
+        // this.props.history.push("/home");
+      )
       .catch(console.log);
   };
   handleSignup = (e, userInfo) => {
