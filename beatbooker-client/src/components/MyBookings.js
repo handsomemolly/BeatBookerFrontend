@@ -15,6 +15,16 @@ class MyBookings extends Component {
       });
   }
 
+  deleteBooking = (book) => {
+    fetch(`http://localhost:3000/bookings/${book.id}`, {
+      method: "DELETE",
+    }).then(() =>
+      this.setState({
+        myBookings: [...this.state.myBookings].filter((b) => b.id !== book.id),
+      })
+    );
+  };
+
   renderBookings = () => {
     return this.state.myBookings.map((book) => {
       return (
@@ -32,7 +42,9 @@ class MyBookings extends Component {
             {book.price}
           </div>
           <button>Edit</button>
-          <button>Delete Request</button>
+          <button onClick={() => this.deleteBooking(book)}>
+            Delete Request
+          </button>
           <br></br>
         </li>
       );
@@ -60,31 +72,3 @@ class MyBookings extends Component {
 }
 
 export default MyBookings;
-
-/* <div class="container">
-  <h2>
-    Responsive Tables Using LI <small>Triggers on 767px</small>
-  </h2>
-  <ul class="responsive-table">
-    <li class="table-header">
-      <div class="col col-1">Job Id</div>
-      <div class="col col-2">Customer Name</div>
-      <div class="col col-3">Amount Due</div>
-      <div class="col col-4">Payment Status</div>
-    </li>
-    <li class="table-row">
-      <div class="col col-1" data-label="Job Id">
-        42235
-      </div>
-      <div class="col col-2" data-label="Customer Name">
-        John Doe
-      </div>
-      <div class="col col-3" data-label="Amount">
-        $350
-      </div>
-      <div class="col col-4" data-label="Payment Status">
-        Pending
-      </div>
-    </li>
-  </ul>
-</div>; */

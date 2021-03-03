@@ -13,6 +13,7 @@ class App extends Component {
   state = {
     user: {},
     error: false,
+    loggedIn: false,
   };
   componentDidMount() {
     const token = localStorage.token;
@@ -48,10 +49,11 @@ class App extends Component {
           username,
           id,
         },
+        loggedIn: true,
         error: null,
       });
       localStorage.setItem("token", token);
-      this.props.history.push("/paintings");
+      this.props.history.push("/home");
     } else if (data.error) {
       this.setState({
         error: data.error,
@@ -60,7 +62,7 @@ class App extends Component {
   };
   handleLogin = (e, userInfo) => {
     e.preventDefault();
-    fetch(API + "/login", {
+    fetch(API + "login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -16,6 +16,9 @@ const Navbar = ({ user, handleLogout }) => {
             <p>
               <NavLink to="/bookings">My Bookings</NavLink>
             </p>
+            <p>
+              <NavLink to="/home">Home</NavLink>
+            </p>
           </>
         ) : (
           <>
