@@ -44,7 +44,7 @@ const Navbar = ({ user, handleLogout }) => {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="nav-link">
+                  <a href="#" className="nav-link" id="logout">
                     <button onClick={handleLogout}>Logout</button>
                   </a>
                 </li>

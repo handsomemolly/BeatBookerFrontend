@@ -27,12 +27,22 @@ class Artist extends Component {
             <h2>Featured</h2>
             <hr />
             <h1>{this.props.selected.name}</h1>
-            <p>Bio: {this.props.selected.bio}</p>
-            <p>Genre: {this.props.selected.genre}</p>
+            <p>
+              <b>Bio:</b> {this.props.selected.bio}
+            </p>
+            <p>
+              <b>Genre:</b> {this.props.selected.genre}
+            </p>
+            <p>
+              <b>Price per Event:</b> ${this.props.selected.price}
+            </p>
             <div className="video">
               <ReactPlayer url={this.props.selected.video_url} />
             </div>
-            <button onClick={this.props.handleBack}>Back to All Artists</button>
+            <br></br>
+            <button className="backToArtists" onClick={this.props.handleBack}>
+              Back to All Artists
+            </button>
           </div>
           <div>
             {
@@ -40,6 +50,7 @@ class Artist extends Component {
                 bookings={this.state.bookings}
                 selected={this.props.selected}
                 artists={this.props.artists}
+                user={this.props.user}
               />
             }
           </div>

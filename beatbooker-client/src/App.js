@@ -123,7 +123,9 @@ class App extends Component {
         {!user.id && <Redirect to="/login" />}
         <Route
           path="/home"
-          render={(routerProps) => <Home {...routerProps} />}
+          render={(routerProps) => (
+            <Home {...routerProps} user={this.state.user} />
+          )}
         />
         <Route path="/bookings" component={MyBookings} />
       </div>

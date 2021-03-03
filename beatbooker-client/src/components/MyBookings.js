@@ -56,7 +56,7 @@ class MyBookings extends Component {
       <div>
         <div className="container">
           <h2>My Bookings</h2>
-          <ul className="responsive-table">
+          <ul className="bookingTable">
             <li className="table-header">
               <div className="col col-1">Date Requested</div>
               <div className="col col-2">Artist</div>
