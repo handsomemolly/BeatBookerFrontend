@@ -19,7 +19,7 @@ const Navbar = ({ user, handleLogout }) => {
                     <NavLink to="/signup">Sign up</NavLink>
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="#" className="nav-link">
                     <NavLink to="/bookings">My Bookings</NavLink>
                   </a>
@@ -28,21 +28,26 @@ const Navbar = ({ user, handleLogout }) => {
                   <a href="#" className="nav-link">
                     <NavLink to="/home">Home</NavLink>
                   </a>
-                </li>
+                </li> */}
               </>
             ) : (
               <>
-                <p>
-                  <NavLink to="/home" exact>
-                    Home
-                  </NavLink>
-                </p>
-                <p>
-                  <NavLink to="/users">Users</NavLink>
-                </p>
-                <p>
-                  <button onClick={handleLogout}>Logout</button>
-                </p>
+                <li>Beat Booker</li>
+                <li>
+                  <a href="#" className="nav-link">
+                    <NavLink to="/home">Home</NavLink>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="nav-link">
+                    <NavLink to="/bookings">My Bookings</NavLink>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="nav-link">
+                    <button onClick={handleLogout}>Logout</button>
+                  </a>
+                </li>
               </>
             )}
           </ul>

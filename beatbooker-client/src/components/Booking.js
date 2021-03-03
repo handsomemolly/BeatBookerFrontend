@@ -7,7 +7,7 @@ import MyBookings from "./MyBookings";
 class Booking extends Component {
   state = {
     eventDate: "mm/dd/yyyy",
-    eventType: "wedding",
+    eventType: "",
     numberOfAttendees: "",
     userId: null,
     artistId: null,
@@ -38,7 +38,7 @@ class Booking extends Component {
       event_date: this.state.eventDate,
       event_type: this.state.eventType,
       number_of_attendees: this.state.numberOfAttendees,
-      user_id: 10,
+      user_id: 12,
       artist_id: this.props.selected.id,
     };
     fetch(`http://localhost:3000/bookings`, {

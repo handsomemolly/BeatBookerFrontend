@@ -192,3 +192,31 @@ li {
   color: #fff;
   text-decoration: none;
 }
+
+.container {
+  width: 80%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

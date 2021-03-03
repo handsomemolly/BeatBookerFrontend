@@ -39,7 +39,7 @@ class MyBookings extends Component {
             {book.number_of_attendees}
           </div>
           <div className="col col-4" data-label="Price">
-            {book.price}
+            ${book.artist.price}
           </div>
           <button>Edit</button>
           <button onClick={() => this.deleteBooking(book)}>
@@ -62,6 +62,7 @@ class MyBookings extends Component {
               <div className="col col-2">Artist</div>
               <div className="col col-3">Attendees</div>
               <div className="col col-4">Price</div>
+              <div className="col col-5">Handle Bookings</div>
             </li>
             {this.renderBookings()}
           </ul>
