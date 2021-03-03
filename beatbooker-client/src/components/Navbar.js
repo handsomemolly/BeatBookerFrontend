@@ -5,10 +5,10 @@ const Navbar = ({ user, handleLogout }) => {
     <div>
       <div className="nav">
         <header className="topNav">
-          <h3 className="navTitle">BeatBooker</h3>
           <ul>
             {!user.id ? (
               <>
+                <li>BeatBooker</li>
                 <li>
                   <a href="#" className="nav-link">
                     <NavLink to="/login">Login</NavLink>
