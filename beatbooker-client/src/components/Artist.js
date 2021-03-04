@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import ReactPlayer from "react-player";
 import "../App.css";
 import Booking from "./Booking";
+import Review from "./Review";
 
 class Artist extends Component {
   state = {
@@ -38,6 +39,9 @@ class Artist extends Component {
             </p>
             <div className="video">
               <ReactPlayer url={this.props.selected.video_url} />
+            </div>
+            <div>
+              <Review user={this.props.user} selected={this.props.selected} />
             </div>
             <br></br>
             <button className="backToArtists" onClick={this.props.handleBack}>

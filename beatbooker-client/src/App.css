@@ -374,3 +374,20 @@ input[type="submit"]:hover {
   background-repeat: no-repeat;
   background-position: 50% 10px;
 }
+
+.reviews {
+  border: 1px;
+  border-color: black;
+  border-style: solid;
+  margin: 4px, 4px;
+  padding: 4px;
+  height: 150px;
+  overflow-y: auto;
+  text-align: justify center;
+}
+
+.rev {
+  border: 1px;
+  border-color: black;
+  border-bottom-style: dotted;
+}

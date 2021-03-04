@@ -15,7 +15,7 @@ class Login extends React.Component {
       <div>
         <div className="login">
           <div className="heading">
-            <h1>Log In</h1>
+            <h1>Welcome!</h1>
           </div>
 
           <form
