@@ -10,6 +10,7 @@ class Home extends Component {
     // bookings: [],
     selected: {},
     display: true,
+    bookingDisplay: true,
   };
 
   componentDidMount() {
@@ -57,6 +58,10 @@ class Home extends Component {
     this.setState({ selected: {}, display: true });
   };
 
+  toggleBooking = () => {
+    this.setState({ bookingDisplay: !this.state.bookingDisplay });
+  };
+
   //   createBooking = () => {
   //     let newBooking = {
   //       event_date: "",
@@ -94,6 +99,8 @@ class Home extends Component {
               handleBack={this.handleBack}
               artists={this.state.artists}
               user={this.props.user}
+              bookingDisplay={this.state.bookingDisplay}
+              toggleBooking={this.toggleBooking}
             />
           ) : null}
         </div>

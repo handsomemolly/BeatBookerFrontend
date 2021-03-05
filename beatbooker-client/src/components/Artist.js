@@ -9,6 +9,7 @@ class Artist extends Component {
   state = {
     bookings: [],
   };
+
   //   generateArtistInfo = () => {
   //     return this.props.selected.map((artist) => {
   //       return (
@@ -47,7 +48,12 @@ class Artist extends Component {
             <button className="backToArtists" onClick={this.props.handleBack}>
               Back to All Artists
             </button>
-            <button className="backToArtists">Create Booking Request</button>
+            <button
+              onClick={this.props.toggleBooking}
+              className="backToArtists"
+            >
+              Create Booking Request
+            </button>
             <button className="backToArtists">Write a Review</button>
           </div>
           <div>
@@ -57,6 +63,7 @@ class Artist extends Component {
                 selected={this.props.selected}
                 artists={this.props.artists}
                 user={this.props.user}
+                bookingDisplay={this.props.bookingDisplay}
               />
             }
           </div>

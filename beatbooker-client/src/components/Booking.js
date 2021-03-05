@@ -6,7 +6,7 @@ import MyBookings from "./MyBookings";
 
 class Booking extends Component {
   state = {
-    eventDate: "mm/dd/yyyy",
+    eventDate: "",
     eventType: "",
     numberOfAttendees: "",
     userId: null,
@@ -62,38 +62,42 @@ class Booking extends Component {
   render() {
     return (
       <div>
-        <div className="booking-form">
-          <h2> Create Booking Request </h2>
-          <form onSubmit={(e) => this.handleSubmit(e)}>
-            <label for="date">Date of Event</label>
-            <input
-              type="date"
-              id="date"
-              onChange={(e) => this.handleEventDateChange(e)}
-              value={this.state.eventDate}
-            />
-            <label for="event_type">Event Type</label>
-            <select
-              id="event_type"
-              value={this.state.eventType}
-              onChange={this.handleEventTypeChange}
-            >
-              <option value="Wedding">Wedding </option>
-              <option value="Conference">Conference </option>
-              <option value="Party">Party </option>
-              <option value="Birthday">Birthday </option>
-              <option value="Do I Need a Reason?">Do I Need a Reason? </option>
-            </select>
-            <label for="attendees">Number of Attendees</label>
-            <input
-              type="select"
-              id="attendees"
-              onChange={(e) => this.handleAttendeesChange(e)}
-              value={this.state.numberOfAttendees}
-            />
-            <input type="submit" className="backToArtists" />
-          </form>
-        </div>
+        {!this.props.bookingDisplay ? (
+          <div className="booking-form">
+            <h2> Create Booking Request </h2>
+            <form onSubmit={(e) => this.handleSubmit(e)}>
+              <label for="date">Date of Event</label>
+              <input
+                type="date"
+                id="date"
+                onChange={(e) => this.handleEventDateChange(e)}
+                value={this.state.eventDate}
+              />
+              <label for="event_type">Event Type</label>
+              <select
+                id="event_type"
+                value={this.state.eventType}
+                onChange={this.handleEventTypeChange}
+              >
+                <option value="Wedding">Wedding </option>
+                <option value="Conference">Conference </option>
+                <option value="Party">Party </option>
+                <option value="Birthday">Birthday </option>
+                <option value="Do I Need a Reason?">
+                  Do I Need a Reason?{" "}
+                </option>
+              </select>
+              <label for="attendees">Number of Attendees</label>
+              <input
+                type="select"
+                id="attendees"
+                onChange={(e) => this.handleAttendeesChange(e)}
+                value={this.state.numberOfAttendees}
+              />
+              <input type="submit" className="backToArtists" />
+            </form>
+          </div>
+        ) : null}
       </div>
     );
   }
