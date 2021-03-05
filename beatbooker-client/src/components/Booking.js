@@ -41,7 +41,7 @@ class Booking extends Component {
       user_id: this.props.user.id,
       artist_id: this.props.selected.id,
     };
-    fetch(`http://localhost:3000/bookings`, {
+    fetch(`http://localhost:3000/bookings/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

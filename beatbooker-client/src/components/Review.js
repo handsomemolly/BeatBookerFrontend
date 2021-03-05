@@ -20,7 +20,10 @@ class Review extends Component {
   }
 
   renderReviews = () => {
-    return this.state.reviews.map((rev) => {
+    let filtered = this.state.reviews.filter(
+      (review) => this.props.selected.id === review.artist.id
+    );
+    return filtered.map((rev) => {
       return (
         <div className="rev">
           <p>

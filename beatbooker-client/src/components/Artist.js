@@ -47,6 +47,8 @@ class Artist extends Component {
             <button className="backToArtists" onClick={this.props.handleBack}>
               Back to All Artists
             </button>
+            <button className="backToArtists">Create Booking Request</button>
+            <button className="backToArtists">Write a Review</button>
           </div>
           <div>
             {
