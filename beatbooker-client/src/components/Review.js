@@ -74,7 +74,11 @@ class Review extends Component {
         //   r.id == rev.id ? rev : r
         // );
         // this.setState({ reviews: newReviews });
-        this.setState({ reviews: [...this.state.reviews, rev] });
+        this.setState({
+          reviews: [...this.state.reviews, rev],
+          description: "",
+          rating: "",
+        });
       });
   };
 
@@ -101,6 +105,7 @@ class Review extends Component {
               onChange={this.handleRatingChange}
               placeholder="1"
             >
+              <option value=""></option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
