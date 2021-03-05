@@ -11,6 +11,7 @@ class Home extends Component {
     selected: {},
     display: true,
     bookingDisplay: true,
+    reviewDisplay: true,
   };
 
   componentDidMount() {
@@ -62,6 +63,10 @@ class Home extends Component {
     this.setState({ bookingDisplay: !this.state.bookingDisplay });
   };
 
+  toggleReview = () => {
+    this.setState({ reviewDisplay: !this.state.reviewDisplay });
+  };
+
   //   createBooking = () => {
   //     let newBooking = {
   //       event_date: "",
@@ -101,6 +106,8 @@ class Home extends Component {
               user={this.props.user}
               bookingDisplay={this.state.bookingDisplay}
               toggleBooking={this.toggleBooking}
+              reviewDisplay={this.state.reviewDisplay}
+              toggleReview={this.toggleReview}
             />
           ) : null}
         </div>

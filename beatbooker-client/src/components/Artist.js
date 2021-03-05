@@ -42,7 +42,11 @@ class Artist extends Component {
               <ReactPlayer url={this.props.selected.video_url} />
             </div>
             <div>
-              <Review user={this.props.user} selected={this.props.selected} />
+              <Review
+                user={this.props.user}
+                selected={this.props.selected}
+                reviewDisplay={this.props.reviewDisplay}
+              />
             </div>
             <br></br>
             <button className="backToArtists" onClick={this.props.handleBack}>
@@ -54,7 +58,9 @@ class Artist extends Component {
             >
               Create Booking Request
             </button>
-            <button className="backToArtists">Write a Review</button>
+            <button onClick={this.props.toggleReview} className="backToArtists">
+              Write a Review
+            </button>
           </div>
           <div>
             {
