@@ -8,9 +8,11 @@ class Review extends Component {
     userId: null,
     artistId: null,
     reviews: [],
+    display: false,
   };
 
   componentDidMount() {
+    this.renderReviews();
     fetch(`http://localhost:3000/reviews`)
       .then((res) => res.json())
       .then((data) => {
@@ -18,6 +20,10 @@ class Review extends Component {
         console.log(this.state);
       });
   }
+
+  //   AddReview = () => {
+
+  //   }
 
   renderReviews = () => {
     let filtered = this.state.reviews.filter(
@@ -64,7 +70,11 @@ class Review extends Component {
     })
       .then((res) => res.json())
       .then((rev) => {
-        console.log(rev);
+        // let newReviews = this.state.reviews.map((r) =>
+        //   r.id == rev.id ? rev : r
+        // );
+        // this.setState({ reviews: newReviews });
+        this.setState({ reviews: [...this.state.reviews, rev] });
       });
   };
 
@@ -73,6 +83,33 @@ class Review extends Component {
       <div>
         <h3>Reviews</h3>
         <div className="reviews">{this.renderReviews()}</div>
+        <div className="review-form">
+          <h4>Add Review</h4>
+          <form onSubmit={(e) => this.handleSubmit(e)}>
+            <label for="description"></label>
+            <input
+              type="text"
+              size="75"
+              id="description"
+              value={this.state.description}
+              onChange={(e) => this.handleDescriptionChange(e)}
+            />
+            <label for="rating">Rating</label>
+            <select
+              id="event_type"
+              value={this.state.rating}
+              onChange={this.handleRatingChange}
+              placeholder="1"
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5?">5</option>
+            </select>
+            <input type="submit" className="addReview" />
+          </form>
+        </div>
       </div>
     );
   }
