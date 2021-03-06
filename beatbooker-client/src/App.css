@@ -193,7 +193,6 @@ li {
 
 /* This rule is applied to the link <a> tag. It lets you turn off the link underline and set the link text color. */
 .nav-link {
-  color: #fff;
   text-decoration: none;
 }
 
@@ -370,7 +369,7 @@ input[type="submit"]:hover {
 } */
 
 .login {
-  background-image: url("./BeatBooker%20Logo.jpg");
+  background-image: url("./BeatBookerLogo.jpg");
   background-repeat: no-repeat;
   background-position: 50% 10px;
 }
@@ -390,4 +389,11 @@ input[type="submit"]:hover {
   border: 1px;
   border-color: black;
   border-bottom-style: dotted;
+}
+
+#myLogo {
+  background: url("./BeatBookerLogo.jpg");
+  object-fit: contain;
+  /* width: 2000px;
+  height: 2000px; */
 }

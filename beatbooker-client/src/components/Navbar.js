@@ -32,11 +32,13 @@ const Navbar = ({ user, handleLogout }) => {
               </>
             ) : (
               <>
-                <li>Beat Booker</li>
                 <li>
-                  <a href="#" className="nav-link">
-                    <NavLink to="/home">Home</NavLink>
-                  </a>
+                  <div>BeatBooker</div>
+                </li>
+                <li>
+                  {/* <a href="#" className="nav-link"> */}
+                  <NavLink to="/home">Home</NavLink>
+                  {/* </a> */}
                 </li>
                 <li>
                   <a href="#" className="nav-link">
