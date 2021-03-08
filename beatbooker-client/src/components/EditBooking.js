@@ -3,33 +3,36 @@ import "../App.css";
 
 class EditBooking extends Component {
   state = {
-    eventDate: this.props.event_date,
-    eventType: this.props.event_type,
+    // eventDate: this.props.event_date,
+    eventDateInput: "",
+    // eventType: this.props.event_type,
     numberOfAttendees: this.props.attendees,
-    userId: this.props.user,
-    artistId: this.props.artist,
+    attendeeInput: "",
+    myBookings: this.props.myBookings,
+    // userId: this.props.user,
+    // artistId: this.props.artist,
   };
 
   handleEventDateChange = (e) => {
     this.setState({
-      eventDate: e.target.value,
+      eventDateInput: e.target.value,
     });
   };
 
   handleAttendeesChange = (e) => {
     this.setState({
-      numberOfAttendees: e.target.value,
+      attendeeInput: e.target.value,
     });
   };
 
   handleBooking = (e) => {
     e.preventDefault();
     let newBooking = {
-      event_date: this.state.eventDate,
-      event_type: this.state.eventType,
-      number_of_attendees: this.state.numberOfAttendees,
-      user_id: this.state.userId,
-      artist_id: this.state.artistId,
+      event_date: this.state.eventDateInput,
+      event_type: this.props.eventType,
+      number_of_attendees: this.state.attendeeInput,
+      user_id: this.props.user,
+      artist_id: this.props.artist,
     };
     fetch(`http://localhost:3000/bookings/${this.props.bookingId}`, {
       method: "PATCH",
@@ -39,7 +42,11 @@ class EditBooking extends Component {
       body: JSON.stringify({ booking: newBooking }),
     })
       .then((res) => res.json())
-      .then(console.log(this.state));
+      .then((booking) => {
+        this.setState({
+          myBookings: booking,
+        });
+      });
   };
 
   render() {
@@ -52,7 +59,7 @@ class EditBooking extends Component {
               type="date"
               id="date"
               onChange={(e) => this.handleEventDateChange(e)}
-              value={this.state.eventDate}
+              value={this.state.eventDateInput}
             />
             {/* <label for="event_type">Event Type</label> */}
             {/* <select
@@ -71,7 +78,7 @@ class EditBooking extends Component {
               type="select"
               id="attendees"
               onChange={(e) => this.handleAttendeesChange(e)}
-              value={this.state.numberOfAttendees}
+              value={this.state.attendeeInput}
             />
             <input type="submit" className="backToArtists" />
           </form>

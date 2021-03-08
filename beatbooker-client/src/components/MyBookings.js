@@ -39,7 +39,8 @@ class MyBookings extends Component {
   // };
 
   renderBookings = () => {
-    return this.state.myBookings.map((book) => {
+    let filtered = this.state.myBookings.filter((b) => b.user_id === b.user.id);
+    return filtered.map((book) => {
       return (
         <li className="table-row">
           <div className="col col-1" data-label="Date Requested">
@@ -69,6 +70,7 @@ class MyBookings extends Component {
               eventType={book.event_type}
               attendees={book.number_of_attendees}
               displayEdit={this.state.displayEdit}
+              myBookings={this.state.myBookings}
             />
           </div>
         </li>

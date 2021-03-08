@@ -42,7 +42,9 @@ const Navbar = ({ user, handleLogout }) => {
                 </li>
                 <li>
                   <a href="#" className="nav-link">
-                    <NavLink to="/bookings">My Bookings</NavLink>
+                    <NavLink to="/bookings" userId={user.id}>
+                      My Bookings
+                    </NavLink>
                   </a>
                 </li>
                 <li>
