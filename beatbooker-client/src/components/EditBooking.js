@@ -47,13 +47,18 @@ class EditBooking extends Component {
           myBookings: booking,
         });
       });
+    this.props.toggleEdit();
   };
 
   render() {
     return (
       <div>
         {!this.props.displayEdit ? (
-          <form onSubmit={(e) => this.handleBooking(e)}>
+          <form
+            onSubmit={(e) => {
+              this.handleBooking(e) && this.props.getNewBookings();
+            }}
+          >
             <label for="date">Date of Event</label>
             <input
               type="date"
@@ -80,7 +85,11 @@ class EditBooking extends Component {
               onChange={(e) => this.handleAttendeesChange(e)}
               value={this.state.attendeeInput}
             />
-            <input type="submit" className="backToArtists" />
+            <input
+              type="submit"
+              className="backToArtists"
+              onClick={this.props.getNewBookings()}
+            />
           </form>
         ) : null}
       </div>

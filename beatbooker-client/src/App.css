@@ -187,7 +187,7 @@ li {
 
 /* :hover allows you change the background color of the nav items when you mouse over them. Play around with the transition value to change the speed of the hover transition. */
 .nav li:hover {
-  background: rgb(243, 243, 243);
+  /* background: rgb(243, 243, 243); */
   transition: background 0.3s;
 }
 
@@ -368,11 +368,11 @@ input[type="submit"]:hover {
   background-color: #45a049;
 } */
 
-.login {
+/* .login {
   background-image: url("./BeatBookerLogo.jpg");
   background-repeat: no-repeat;
   background-position: 50% 10px;
-}
+} */
 
 .reviews {
   border: 1px;
@@ -391,9 +391,130 @@ input[type="submit"]:hover {
   border-bottom-style: dotted;
 }
 
-#myLogo {
+.logo {
   background: url("./BeatBookerLogo.jpg");
-  object-fit: contain;
-  /* width: 2000px;
-  height: 2000px; */
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.logout {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #ffffff;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Helvetica", san-serif;
+  font-weight: 300;
+  color: black;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.logout:hover {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.deleteBooking {
+  display: inline-block;
+  padding: 0.5em 3em;
+  border: 0.16em solid #ffffff;
+  margin: 0.16em 0.3em 0;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #030303;
+  text-align: center;
+  transition: all 0.15s;
+  background-color: #ffffff;
+  border-color: black;
+}
+
+.deleteBooking:hover {
+  color: whitesmoke;
+  background-color: #a02323;
+  border-color: #050505;
+}
+
+.deleteBooking:active {
+  color: #000000;
+  border-color: #bbbbbb;
+}
+
+.form-style-6 {
+  font: 95% Arial, Helvetica, sans-serif;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 16px;
+  background: #f7f7f7;
+}
+.form-style-6 h1 {
+  background: #3c9db5;
+  padding: 20px 0;
+  font-size: 140%;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+  margin: -16px -16px 16px -16px;
+}
+.form-style-6 input[type="text"],
+.form-style-6 input[type="date"],
+.form-style-6 input[type="datetime"],
+.form-style-6 input[type="email"],
+.form-style-6 input[type="number"],
+.form-style-6 input[type="search"],
+.form-style-6 input[type="time"],
+.form-style-6 input[type="url"],
+.form-style-6 textarea,
+.form-style-6 select {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  outline: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  background: #fff;
+  margin-bottom: 4%;
+  border: 1px solid #ccc;
+  padding: 3%;
+  color: #555;
+  font: 95% Arial, Helvetica, sans-serif;
+}
+.form-style-6 input[type="text"]:focus,
+.form-style-6 input[type="date"]:focus,
+.form-style-6 input[type="datetime"]:focus,
+.form-style-6 input[type="email"]:focus,
+.form-style-6 input[type="number"]:focus,
+.form-style-6 input[type="search"]:focus,
+.form-style-6 input[type="time"]:focus,
+.form-style-6 input[type="url"]:focus,
+.form-style-6 textarea:focus,
+.form-style-6 select:focus {
+  box-shadow: 0 0 5px #3c9db5;
+  padding: 3%;
+  border: 1px solid #3c9db5;
+}
+
+.form-style-6 input[type="submit"],
+.form-style-6 input[type="button"] {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  padding: 3%;
+  background: #43d1af;
+  border-bottom: 2px solid #30c29e;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  color: #fff;
+}
+.form-style-6 input[type="submit"]:hover,
+.form-style-6 input[type="button"]:hover {
+  background: #3c9db5;
 }

@@ -3,6 +3,7 @@ import "../App.css";
 import Artist from "./Artist";
 import Booking from "./Booking";
 import { Redirect } from "react-router-dom";
+import Logo from "../BeatBookerLogo.jpg";
 
 class Home extends Component {
   state = {

@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Logo from "../BeatBookerLogo.jpg";
 const Navbar = ({ user, handleLogout }) => {
   return (
     <div>
@@ -19,16 +20,6 @@ const Navbar = ({ user, handleLogout }) => {
                     <NavLink to="/signup">Sign up</NavLink>
                   </a>
                 </li>
-                {/* <li>
-                  <a href="#" className="nav-link">
-                    <NavLink to="/bookings">My Bookings</NavLink>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="nav-link">
-                    <NavLink to="/home">Home</NavLink>
-                  </a>
-                </li> */}
               </>
             ) : (
               <>
@@ -48,9 +39,9 @@ const Navbar = ({ user, handleLogout }) => {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="nav-link" id="logout">
-                    <button onClick={handleLogout}>Logout</button>
-                  </a>
+                  <button className="logout" onClick={handleLogout}>
+                    Logout
+                  </button>
                 </li>
               </>
             )}

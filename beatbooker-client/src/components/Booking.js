@@ -63,22 +63,23 @@ class Booking extends Component {
     return (
       <div>
         {!this.props.bookingDisplay ? (
-          <div className="booking-form">
-            <h2> Create Booking Request </h2>
+          <div className="form-style-6">
+            <h1> Create Booking Request </h1>
             <form onSubmit={(e) => this.handleSubmit(e)}>
-              <label for="date">Date of Event</label>
               <input
                 type="date"
-                id="date"
+                placeholder="mm/dd/yyyy"
                 onChange={(e) => this.handleEventDateChange(e)}
                 value={this.state.eventDate}
               />
-              <label for="event_type">Event Type</label>
               <select
-                id="event_type"
+                placeholder="wedding, party, etc.."
                 value={this.state.eventType}
                 onChange={this.handleEventTypeChange}
               >
+                <option value="" selected disabled hidden>
+                  Celebration, Baptism, Darty...
+                </option>
                 <option value="Wedding">Wedding </option>
                 <option value="Conference">Conference </option>
                 <option value="Party">Party </option>
@@ -87,14 +88,17 @@ class Booking extends Component {
                   Do I Need a Reason?{" "}
                 </option>
               </select>
-              <label for="attendees">Number of Attendees</label>
               <input
-                type="select"
-                id="attendees"
+                type="text"
                 onChange={(e) => this.handleAttendeesChange(e)}
                 value={this.state.numberOfAttendees}
+                placeholder="# Attending"
               />
-              <input type="submit" className="backToArtists" />
+              <input
+                type="submit"
+                value="Request Booking"
+                className="backToArtists"
+              />
             </form>
           </div>
         ) : null}

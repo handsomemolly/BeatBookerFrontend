@@ -20,6 +20,15 @@ class MyBookings extends Component {
       });
   }
 
+  getNewBookings = () => {
+    fetch(`http://localhost:3000/bookings`)
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({ myBookings: data });
+        console.log(this.state);
+      });
+  };
+
   deleteBooking = (book) => {
     fetch(`http://localhost:3000/bookings/${book.id}`, {
       method: "DELETE",
@@ -55,8 +64,13 @@ class MyBookings extends Component {
           <div className="col col-4" data-label="Price">
             ${book.artist.price}
           </div>
-          <button onClick={this.toggleEdit}>Edit</button>
-          <button onClick={() => this.deleteBooking(book)}>
+          <button className="backToArtists" onClick={this.toggleEdit}>
+            Edit
+          </button>
+          <button
+            className="deleteBooking"
+            onClick={() => this.deleteBooking(book)}
+          >
             Delete Request
           </button>
           <br></br>
@@ -70,7 +84,9 @@ class MyBookings extends Component {
               eventType={book.event_type}
               attendees={book.number_of_attendees}
               displayEdit={this.state.displayEdit}
+              toggleEdit={this.toggleEdit}
               myBookings={this.state.myBookings}
+              getNewBookings={this.getNewBookings}
             />
           </div>
         </li>
@@ -100,3 +116,18 @@ class MyBookings extends Component {
 }
 
 export default MyBookings;
+
+// parent component
+// state{
+// activeBooking: #id,
+// attendants: "",
+// event: "",}
+
+// fetch(localhost:3000/bookings/#id)
+// .then(res => res.json())
+// .then(booking => {this.setState({
+// attendants: booking.attendants,
+// event: booking.event})})
+
+// render() {
+// return activeBooking: attendants: this.state.attendants}
