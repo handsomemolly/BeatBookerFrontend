@@ -1,4 +1,5 @@
 import React from "react";
+import Logo from "../logoLrg.png";
 class Login extends React.Component {
   state = {
     username: "",
@@ -14,18 +15,12 @@ class Login extends React.Component {
     return (
       <div>
         <div className="login">
-          <div className="heading">
-            <h1>Welcome!</h1>
-          </div>
-
+          <h1>Welcome to BeatBooker</h1>
           <form
             action="#"
             onSubmit={(e) => this.props.handleLoginOrSignup(e, this.state)}
           >
-            <div className="input-group input-group-lg">
-              <span class="input-group-addon">
-                <i class="fa fa-user"></i>
-              </span>
+            <p>
               <input
                 type="text"
                 className="form-control"
@@ -34,12 +29,8 @@ class Login extends React.Component {
                 value={this.state.username}
                 onChange={this.handleChange}
               />
-            </div>
-            <br />
-            <div className="input-group input-group-lg">
-              <span class="input-group-addon">
-                <i class="fa fa-user"></i>
-              </span>
+            </p>
+            <p>
               <input
                 type="password"
                 className="form-control"
@@ -48,12 +39,14 @@ class Login extends React.Component {
                 value={this.state.password}
                 onChange={this.handleChange}
               />
-            </div>
-            <br />
-            <button type="submit" className="float" value="Submit">
-              Log In
-            </button>
+            </p>
+            <p class="submit">
+              <input type="submit" className="float" value="Submit" />
+            </p>
           </form>
+          <div>
+            <img src={Logo} />
+          </div>
         </div>
       </div>
     );

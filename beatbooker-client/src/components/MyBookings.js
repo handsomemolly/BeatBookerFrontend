@@ -43,16 +43,19 @@ class MyBookings extends Component {
     this.setState({ displayEdit: !this.state.displayEdit });
   };
 
-  // editBooking = (book) => {
-  //   fetch(`http://localhost:3000/bookings/${book.id}`, {});
-  // };
+  formatDate = (book) => {
+    var allDate = book.split(" ");
+    var thisDate = allDate[0].split("-");
+    var newDate = [thisDate[2], thisDate[1], thisDate[0]].join("-");
+    return newDate;
+  };
 
   renderBookings = () => {
     let filtered = this.state.myBookings.filter((b) => b.user_id === b.user.id);
     return filtered.map((book) => {
       return (
         <li className="table-row">
-          <div className="col col-1" data-label="Date Requested">
+          <div className="col col-1" data-label="Date">
             {book.event_date}
           </div>
           <div className="col col-2" data-label="Artist">
@@ -64,15 +67,17 @@ class MyBookings extends Component {
           <div className="col col-4" data-label="Price">
             ${book.artist.price}
           </div>
-          <button className="backToArtists" onClick={this.toggleEdit}>
-            Edit
-          </button>
-          <button
-            className="deleteBooking"
-            onClick={() => this.deleteBooking(book)}
-          >
-            Delete Request
-          </button>
+          <tr>
+            <button className="backToArtists" onClick={this.toggleEdit}>
+              Edit
+            </button>
+            <button
+              className="deleteBooking"
+              onClick={() => this.deleteBooking(book)}
+            >
+              Delete
+            </button>
+          </tr>
           <br></br>
           <div>
             <EditBooking
@@ -101,11 +106,11 @@ class MyBookings extends Component {
           <h2>My Bookings</h2>
           <ul className="bookingTable">
             <li className="table-header">
-              <div className="col col-1">Date Requested</div>
+              <div className="col col-1">Date</div>
               <div className="col col-2">Artist</div>
               <div className="col col-3">Attendees</div>
               <div className="col col-4">Price</div>
-              <div className="col col-5">Handle Bookings</div>
+              <div className="col col-5">Edit/Delete</div>
             </li>
             {this.renderBookings()}
           </ul>

@@ -3,7 +3,6 @@ import "../App.css";
 import Artist from "./Artist";
 import Booking from "./Booking";
 import { Redirect } from "react-router-dom";
-import Logo from "../BeatBookerLogo.jpg";
 
 class Home extends Component {
   state = {
@@ -13,6 +12,7 @@ class Home extends Component {
     display: true,
     bookingDisplay: true,
     reviewDisplay: true,
+    prices: [],
   };
 
   componentDidMount() {
@@ -21,6 +21,9 @@ class Home extends Component {
       .then((data) => {
         this.setState({ artists: data });
         console.log(this.state);
+        data.map((artist) => {
+          this.setState({ prices: [...this.state.prices, artist.price] });
+        });
       });
   }
 
@@ -54,6 +57,16 @@ class Home extends Component {
         </div>
       );
     });
+  };
+
+  sortByPriceDesc = () => {
+    const sorted = [...this.state.artists].sort((a, b) => b.price - a.price);
+    this.setState({ artists: sorted });
+  };
+
+  sortByPriceAsc = () => {
+    const sorted = [...this.state.artists].sort((a, b) => a.price - b.price);
+    this.setState({ artists: sorted });
   };
 
   handleBack = () => {
@@ -94,6 +107,13 @@ class Home extends Component {
       <div>
         <h1 className="title">Book Your Next Beat</h1>
         <div className="centered">
+          <button className="sortByPrice" onClick={this.sortByPriceDesc}>
+            Sort by Price: High to Low
+          </button>
+          <br></br>
+          <button className="sortByPrice" onClick={this.sortByPriceAsc}>
+            Sort by Price: Low to High
+          </button>
           <section className="cards">
             {this.state.display ? this.generateArtists() : null}
           </section>
