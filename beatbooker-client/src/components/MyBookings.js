@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../App.css";
 import EditBooking from "./EditBooking";
-import Logo from "../logoLrg.png";
+import Logo from "../logoCrop.png";
 
 class MyBookings extends Component {
   state = {

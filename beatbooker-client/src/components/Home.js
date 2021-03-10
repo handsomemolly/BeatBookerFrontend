@@ -4,6 +4,7 @@ import Artist from "./Artist";
 import Booking from "./Booking";
 import Reivew from "./Review";
 import { Redirect } from "react-router-dom";
+import Logo from "../logoCrop.png";
 
 class Home extends Component {
   state = {
@@ -123,7 +124,11 @@ class Home extends Component {
   render() {
     return (
       <div>
+        <div>
+          <img src={Logo} />
+        </div>
         <h1 className="title">Book Your Next Beat</h1>
+
         <div className="centered">
           <div className="buttons">
             <button className="sortByPrice1" onClick={this.sortByPriceDesc}>
