@@ -540,7 +540,7 @@ input[type="submit"]:hover {
   color: #030303;
   text-align: center;
   transition: all 0.15s;
-  background-color: #ffffff;
+  background-color: #f09f31;
   border-color: black;
 }
 
@@ -566,7 +566,7 @@ input[type="submit"]:hover {
   color: #030303;
   text-align: center;
   transition: all 0.15s;
-  background-color: #ffffff;
+  background-color: #46b59b;
   border-color: black;
 }
 
@@ -592,7 +592,7 @@ input[type="submit"]:hover {
   color: #030303;
   text-align: center;
   transition: all 0.15s;
-  background-color: #ffffff;
+  background-color: #3c9db5;
   border-color: black;
 }
 
@@ -854,8 +854,11 @@ body {
 }
 
 .buttons {
-  margin: 0 auto;
-  display: inline-block;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 #description {
