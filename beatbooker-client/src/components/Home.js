@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../App.css";
 import Artist from "./Artist";
 import Booking from "./Booking";
+import Reivew from "./Review";
 import { Redirect } from "react-router-dom";
 
 class Home extends Component {
