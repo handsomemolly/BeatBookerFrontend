@@ -5,6 +5,8 @@ import "../App.css";
 import Booking from "./Booking";
 import Review from "./Review";
 
+const youtubeAPI = "http://www.youtube.com/embed/";
+
 class Artist extends Component {
   state = {
     bookings: [],
@@ -39,7 +41,14 @@ class Artist extends Component {
               <b>Price per Event:</b> ${this.props.selected.price}
             </p>
             <div className="video">
-              <ReactPlayer url={this.props.selected.video_url} />
+              {/* <ReactPlayer url={this.props.selected.video_url} /> */}
+              <iframe
+                width="75%"
+                height="500"
+                src={youtubeAPI + `${this.props.selected.video_url}`}
+                frameBorder="0"
+                allowFullScreen
+              ></iframe>
             </div>
             <div>
               <Review
@@ -87,22 +96,3 @@ class Artist extends Component {
 }
 
 export default Artist;
-
-{
-  /* <div class="container center">
-  <div class="card">
-    <h2>Card</h2>
-    <hr />
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
-    </p>
-    <button>Next</button>
-  </div>
-</div>; */
-}

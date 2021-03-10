@@ -10,6 +10,7 @@ import Artist from "./components/Artist";
 import MyBookings from "./components/MyBookings";
 
 const API = "http://localhost:3000/";
+
 class App extends Component {
   state = {
     user: {},
