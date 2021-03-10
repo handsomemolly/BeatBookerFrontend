@@ -401,9 +401,9 @@ input[type="submit"]:hover {
   border: none;
   padding: 0 !important;
   /*optional*/
-  font-family: arial, sans-serif;
+  font: 16px/16px "Lucida Grande", Tahoma, Verdana, sans-serif;
   /*input has OS specific font-family*/
-  color: #069;
+  color: #551a8b;
   text-decoration: underline;
   cursor: pointer;
 }

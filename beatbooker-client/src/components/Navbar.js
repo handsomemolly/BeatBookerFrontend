@@ -24,7 +24,9 @@ const Navbar = ({ user, handleLogout }) => {
             ) : (
               <>
                 <li>
-                  <div>BeatBooker</div>
+                  <div>
+                    <b>BeatBooker</b>
+                  </div>
                 </li>
                 <li>
                   {/* <a href="#" className="nav-link"> */}
