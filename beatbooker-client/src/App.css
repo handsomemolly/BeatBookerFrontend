@@ -90,6 +90,20 @@
     35px 35px 0px #c11a2b, 40px 40px 0px #c11a2b, 45px 45px 0px #c11a2b;
 }
 
+.booking-title {
+  font-size: 4rem;
+  text-align: center;
+  height: 15vh;
+  line-height: 15vh;
+  color: #fcedd8;
+  background: #be5e5f;
+  font-family: "Niconne", cursive;
+  font-weight: 700;
+  text-shadow: 5px 5px 0px #eb452b, 10px 10px 0px #efa032, 15px 15px 0px #46b59b,
+    20px 20px 0px #017e7f, 25px 25px 0px #052939, 30px 30px 0px #c11a2b,
+    35px 35px 0px #c11a2b, 40px 40px 0px #c11a2b, 45px 45px 0px #c11a2b;
+}
+
 body {
   background-color: #be5e5f;
   /* background-image: url("./BeatBooker%20Logo.jpg");
@@ -123,13 +137,13 @@ li {
   margin-bottom: 25px;
 }
 .table-header {
-  background-color: #90818e;
+  background-color: #4ed2f3;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
 .table-row {
-  background-color: #ffffff;
+  background-color: #fbedd7;
   box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
 }
 .col-1 {
@@ -515,7 +529,7 @@ input[type="submit"]:hover {
   background: #3c9db5;
 }
 
-.sortByPrice {
+.sortByPrice1 {
   display: inline-block;
   padding: 0.5em 3em;
   border: 0.16em solid #ffffff;
@@ -530,13 +544,65 @@ input[type="submit"]:hover {
   border-color: black;
 }
 
-.sortByPrice:hover {
+.sortByPrice1:hover {
+  color: whitesmoke;
+  background-color: #f09f31;
+  border-color: #050505;
+}
+
+.sortByPrice1:active {
+  color: #000000;
+  border-color: #bbbbbb;
+}
+
+.sortByPrice2 {
+  display: inline-block;
+  padding: 0.5em 3em;
+  border: 0.16em solid #ffffff;
+  margin: 0.16em 0.3em 0;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #030303;
+  text-align: center;
+  transition: all 0.15s;
+  background-color: #ffffff;
+  border-color: black;
+}
+
+.sortByPrice2:hover {
+  color: whitesmoke;
+  background-color: #46b59b;
+  border-color: #050505;
+}
+
+.sortByPrice2:active {
+  color: #000000;
+  border-color: #bbbbbb;
+}
+
+.sortByPrice3 {
+  display: inline-block;
+  padding: 0.5em 3em;
+  border: 0.16em solid #ffffff;
+  margin: 0.16em 0.3em 0;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #030303;
+  text-align: center;
+  transition: all 0.15s;
+  background-color: #ffffff;
+  border-color: black;
+}
+
+.sortByPrice3:hover {
   color: whitesmoke;
   background-color: #3c9db5;
   border-color: #050505;
 }
 
-.sortByPrice:active {
+.sortByPrice3:active {
   color: #000000;
   border-color: #bbbbbb;
 }

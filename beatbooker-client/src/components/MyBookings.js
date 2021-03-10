@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../App.css";
 import EditBooking from "./EditBooking";
+import Logo from "../logoLrg.png";
 
 class MyBookings extends Component {
   state = {
@@ -102,8 +103,12 @@ class MyBookings extends Component {
   render() {
     return (
       <div>
+        <div>
+          <img src={Logo} />
+        </div>
+        <h1 className="booking-title">My Bookings</h1>
+
         <div className="container">
-          <h2>My Bookings</h2>
           <ul className="bookingTable">
             <li className="table-header">
               <div className="col col-1">Date</div>

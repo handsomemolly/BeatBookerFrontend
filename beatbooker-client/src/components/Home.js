@@ -126,15 +126,15 @@ class Home extends Component {
         <h1 className="title">Book Your Next Beat</h1>
         <div className="centered">
           <div className="buttons">
-            <button className="sortByPrice" onClick={this.sortByPriceDesc}>
+            <button className="sortByPrice1" onClick={this.sortByPriceDesc}>
               Price: High to Low
             </button>
             <br></br>
-            <button className="sortByPrice" onClick={this.sortByPriceAsc}>
+            <button className="sortByPrice2" onClick={this.sortByPriceAsc}>
               Price: Low to High
             </button>
             <br></br>
-            <button className="sortByPrice" onClick={this.sortByMostReviewed}>
+            <button className="sortByPrice3" onClick={this.sortByMostReviewed}>
               Most Reviewed
             </button>
           </div>
