@@ -48,6 +48,15 @@ class Artist extends Component {
                 reviewDisplay={this.props.reviewDisplay}
               />
             </div>
+            <div>
+              <Booking
+                bookings={this.state.bookings}
+                selected={this.props.selected}
+                artists={this.props.artists}
+                user={this.props.user}
+                bookingDisplay={this.props.bookingDisplay}
+              />
+            </div>
             <br></br>
             <button className="backToArtists" onClick={this.props.handleBack}>
               Back to All Artists
@@ -62,17 +71,15 @@ class Artist extends Component {
               Write a Review
             </button>
           </div>
-          <div>
-            {
-              <Booking
-                bookings={this.state.bookings}
-                selected={this.props.selected}
-                artists={this.props.artists}
-                user={this.props.user}
-                bookingDisplay={this.props.bookingDisplay}
-              />
-            }
-          </div>
+          {/* <div>
+            <Booking
+              bookings={this.state.bookings}
+              selected={this.props.selected}
+              artists={this.props.artists}
+              user={this.props.user}
+              bookingDisplay={this.props.bookingDisplay}
+            />
+          </div> */}
         </div>
       </div>
     );

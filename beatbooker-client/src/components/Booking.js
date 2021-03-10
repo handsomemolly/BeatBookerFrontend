@@ -65,7 +65,9 @@ class Booking extends Component {
         {!this.props.bookingDisplay ? (
           <div className="form-style-6">
             <h1> Create Booking Request </h1>
-            <form onSubmit={(e) => this.handleSubmit(e)}>
+            <form
+              onSubmit={(e) => this.handleSubmit(e) && this.toggleBooking()}
+            >
               <input
                 type="date"
                 placeholder="mm/dd/yyyy"
@@ -87,6 +89,7 @@ class Booking extends Component {
                 <option value="Do I Need a Reason?">
                   Do I Need a Reason?{" "}
                 </option>
+                <option value="Other">Other</option>
               </select>
               <input
                 type="text"

@@ -54,6 +54,12 @@ class Home extends Component {
               <b>Price per Event:</b> ${artist.price}
             </p>
           </article>
+          <div class="muzieknootjes">
+            <div class="noot-1">&#9835; &#9833;</div>
+            <div class="noot-2">&#9833;</div>
+            <div class="noot-3">&#9839; &#9834;</div>
+            <div class="noot-4">&#9834;</div>
+          </div>
         </div>
       );
     });
@@ -107,13 +113,15 @@ class Home extends Component {
       <div>
         <h1 className="title">Book Your Next Beat</h1>
         <div className="centered">
-          <button className="sortByPrice" onClick={this.sortByPriceDesc}>
-            Sort by Price: High to Low
-          </button>
-          <br></br>
-          <button className="sortByPrice" onClick={this.sortByPriceAsc}>
-            Sort by Price: Low to High
-          </button>
+          <div className="buttons">
+            <button className="sortByPrice" onClick={this.sortByPriceDesc}>
+              Sort by Price: High to Low
+            </button>
+            <br></br>
+            <button className="sortByPrice" onClick={this.sortByPriceAsc}>
+              Sort by Price: Low to High
+            </button>
+          </div>
           <section className="cards">
             {this.state.display ? this.generateArtists() : null}
           </section>

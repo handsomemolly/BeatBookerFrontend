@@ -78,7 +78,7 @@ class EditBooking extends Component {
             <option value="Birthday">Birthday </option>
             <option value="Do I Need a Reason?">Do I Need a Reason? </option>
           </select> */}
-            <label for="attendees">Number of Attendees</label>
+            <label for="attendees">Attendees</label>
             <input
               type="select"
               id="attendees"
