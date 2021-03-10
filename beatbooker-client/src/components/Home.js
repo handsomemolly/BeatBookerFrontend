@@ -53,6 +53,10 @@ class Home extends Component {
             <p>
               <b>Price per Event:</b> ${artist.price}
             </p>
+            <p>
+              <b>Number of Reviews: </b>
+              {artist.reviews.length}
+            </p>
           </article>
           <div class="muzieknootjes">
             <div class="noot-1">&#9835; &#9833;</div>
@@ -72,6 +76,13 @@ class Home extends Component {
 
   sortByPriceAsc = () => {
     const sorted = [...this.state.artists].sort((a, b) => a.price - b.price);
+    this.setState({ artists: sorted });
+  };
+
+  sortByMostReviewed = () => {
+    const sorted = [...this.state.artists].sort(
+      (a, b) => b.reviews.length - a.reviews.length
+    );
     this.setState({ artists: sorted });
   };
 
@@ -115,11 +126,15 @@ class Home extends Component {
         <div className="centered">
           <div className="buttons">
             <button className="sortByPrice" onClick={this.sortByPriceDesc}>
-              Sort by Price: High to Low
+              Price: High to Low
             </button>
             <br></br>
             <button className="sortByPrice" onClick={this.sortByPriceAsc}>
-              Sort by Price: Low to High
+              Price: Low to High
+            </button>
+            <br></br>
+            <button className="sortByPrice" onClick={this.sortByMostReviewed}>
+              Most Reviewed
             </button>
           </div>
           <section className="cards">
